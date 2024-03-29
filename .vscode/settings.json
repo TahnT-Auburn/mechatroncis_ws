@@ -1,0 +1,10 @@
+{
+    "cmake.sourceDirectory": "/home/atr/mech_devel/mechatroncis_ws/src/img_pubsub",
+    "files.associations": {
+        "array": "cpp",
+        "bitset": "cpp",
+        "string_view": "cpp",
+        "initializer_list": "cpp",
+        "utility": "cpp"
+    }
+}

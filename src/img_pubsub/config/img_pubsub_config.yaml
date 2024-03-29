@@ -1,3 +1,15 @@
 /**:
   ros__parameters:
-    test: "Pass!"
+
+    #Mask Parameters
+    width_tolerance: 150
+    height_scale: 0.45
+
+    #IPM Parameters
+    ipm_width_tolerance: 75
+    ipm_height_scale: 0.25
+    ipm_offset: 200
+
+    #Errosion / Dilation
+    erode_size: [1.0,1.0]
+    dilate_size: [3.0,3.0]

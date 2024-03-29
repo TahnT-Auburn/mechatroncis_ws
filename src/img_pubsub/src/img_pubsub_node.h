@@ -16,7 +16,7 @@ class ImagePubSub : public rclcpp::Node
 public:
 	ImagePubSub() : Node("img_pubsub_node")
 	{
-		//parseParameters();
+		parseParameters();
 		
 		subscription_ = this->create_subscription<sensor_msgs::msg::Image>(
 			"/camera/color/image_raw", 1,
@@ -24,10 +24,20 @@ public:
 	}
 private:
 	void parseParameters();
-	// void callback(const sensor_msgs::msg::Image::SharedPtr msg);
 	void processImage(const sensor_msgs::msg::Image::SharedPtr msg);
+	void binaryThresholding(cv::Mat& img);
+	cv::Mat maskImage(cv::Mat& img);
+	void IPM(cv::Mat& img);
+	void erosionDilation(cv::Mat& img);
+	void polyFit(cv::Mat& img);
 
-	std::string test_;
+	int width_tolerance_;
+	float height_scale_;
+	int ipm_width_tolerance_;
+	float ipm_height_scale_;
+	int ipm_offset_;
+	std::vector<double> erode_size_,
+					 	dilate_size_;
 
 	rclcpp::Subscription<sensor_msgs::msg::Image>::SharedPtr subscription_;
 };
