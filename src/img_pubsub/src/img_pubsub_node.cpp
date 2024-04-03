@@ -139,7 +139,9 @@ void ImagePubSub::erosionDilation(cv::Mat& img)
 }
 
 void ImagePubSub::polyFit(cv::Mat& img)
-{
+{	
+	std::vector<double> hist;
+	
 	//Histogram
-	hist = sum(img[int(img.shape[0]/2):,:], axis)
+	hist = sum(img[int(img.size().height/2):,:])
 }
